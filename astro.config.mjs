@@ -9,7 +9,7 @@ import sveltiaCms from 'astro-sveltia-cms';
 
 // https://astro.build/config
 export default defineConfig({
-  base: "vemas23.github.io"
+  base: "vemas23.github.io",
   site: 'https://vemas.is-a.dev',
   integrations: [mdx(), sitemap(), tailwind(), sveltiaCms()],
   markdown: {
