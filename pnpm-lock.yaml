@@ -26,6 +26,9 @@ dependencies:
   astro-icon:
     specifier: ^0.8.2
     version: 0.8.2
+  astro-sveltia-cms:
+    specifier: ^0.1.0
+    version: 0.1.0(astro@4.6.3)
   mdast-util-to-string:
     specifier: ^4.0.0
     version: 4.0.0
@@ -1460,6 +1463,14 @@ packages:
       svgo: 2.8.0
     dev: false
 
+  /astro-sveltia-cms@0.1.0(astro@4.6.3):
+    resolution: {integrity: sha512-2FPiq8X4h8yMczrTPut2tYyNyXJMSSWvz/tFMfejJwNb00SBhjUWzyduG3XOQJbDeOfXzkejd551zpwwhDvT+A==}
+    peerDependencies:
+      astro: ^2.0.0 || ^3.0.0
+    dependencies:
+      astro: 4.6.3(typescript@5.3.3)
+    dev: false
+
   /astro@4.6.3(typescript@5.3.3):
     resolution: {integrity: sha512-p2zs1Gac+ysdc/yFCoc8pOXTZE5L9foAtmqUzUVL22WX68bYTRovd03GRs7J1MDpwzsl9kJtlK20ROpjyIFpNw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
@@ -1790,6 +1801,7 @@ packages:
 
   /color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
+    requiresBuild: true
     dev: false
 
   /color-string@1.9.1:

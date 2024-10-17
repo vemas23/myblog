@@ -1,0 +1,34 @@
+backend:
+  name: github
+  branch: main # change this to your branch
+  repo: vemas23/myblog # change this to your repo
+  site_domain: vemas.is-a.dev # change this to your domain
+  base_url: https://vemas.is-a.dev # change this to your prod URL
+  auth_endpoint: oauth # the oauth route provided by the integration
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true, hint: "Title of your post. Limited to a maximum of 150 characters", pattern: ['^.{1,150}$', 'Title must be less than 150 characters'] }
+      - { label: "Description", name: "description", widget: "text", required: true, hint: "Short description of your post. Max length 250 characters", pattern: ['^.{1,250}$', 'Description must be less than 250 characters'] }
+      - { label: "Published Date", name: "pubDate", widget: "datetime", required: true, date_format: "YYYY-MM-DD" }
+      - { label: "Updated Date", name: "updateDate", widget: "datetime", required: false, date_format: "YYYY-MM-DD", hint: "Optional. Used for ordering when available." }
+      - label: "Hero Image"
+        name: "heroImage"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Image Source", name: "src", widget: "image" }
+          - { label: "Alt Text", name: "alt", widget: "string" }
+      - { label: "OG Image", name: "ogImage", widget: "image", required: false, hint: "Optional image used for SEO." }
+      - { label: "Tags", name: "tags", widget: "list", required: false, hint: "Optional tags to organize your posts." }
+      - { label: "Series", name: "series", widget: "list", required: false, hint: "Optional series to organize your posts." }
+      - { label: "Draft", name: "draft", widget: "boolean", required: false, hint: "Optional boolean to remove post from being published." }
+      - { label: "Order", name: "order", widget: "number", required: false, min: 1, max: 5, hint: "Optional number from 1-5 to pin posts." }
+      - { label: "Hide Post", name: "hide", widget: "boolean", required: false, hint: "Optional boolean to hide post from `/blog` page but show in `/archive`." }
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"

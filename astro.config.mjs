@@ -5,10 +5,12 @@ import { remarkReadingTime } from './src/utils/remark-reading-time.mjs';
 
 import tailwind from "@astrojs/tailwind";
 
+import sveltiaCms from 'astro-sveltia-cms';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://astro-theme-cody.netlify.app',
-  integrations: [mdx(), sitemap(), tailwind()],
+  integrations: [mdx(), sitemap(), tailwind(), sveltiaCms()],
   markdown: {
     remarkPlugins: [remarkReadingTime],
     syntaxHighlight: 'shiki',
@@ -20,6 +22,6 @@ export default defineConfig({
       },
     }
   },
+  output: "server",
 });
-
 
