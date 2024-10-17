@@ -9,7 +9,8 @@ import sveltiaCms from 'astro-sveltia-cms';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://astro-theme-cody.netlify.app',
+  base: "vemas23.github.io"
+  site: 'https://vemas.is-a.dev',
   integrations: [mdx(), sitemap(), tailwind(), sveltiaCms()],
   markdown: {
     remarkPlugins: [remarkReadingTime],
